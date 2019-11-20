@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using PhoneShopSite_201119.Models;
+using System.Data.Entity;
 
 namespace PhoneShopSite_201119
 {
@@ -12,6 +14,8 @@ namespace PhoneShopSite_201119
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new DbInitializer());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
